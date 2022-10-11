@@ -83,7 +83,7 @@ namespace Supermarket.API.Migrations
                         new
                         {
                             Id = 100,
-                            CategoryId = 1,
+                            CategoryId = 100,
                             Name = "Apple",
                             QuantityInPackage = (short)1,
                             UnitOfMeasurement = (byte)1
@@ -91,7 +91,7 @@ namespace Supermarket.API.Migrations
                         new
                         {
                             Id = 101,
-                            CategoryId = 2,
+                            CategoryId = 101,
                             Name = "Milk",
                             QuantityInPackage = (short)2,
                             UnitOfMeasurement = (byte)5

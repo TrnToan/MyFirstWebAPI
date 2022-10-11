@@ -4,7 +4,7 @@
 
 namespace Supermarket.API.Migrations
 {
-    public partial class MigrationV1 : Migration
+    public partial class Migrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,6 +52,16 @@ namespace Supermarket.API.Migrations
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 101, "Dairy" });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "Name", "QuantityInPackage", "UnitOfMeasurement" },
+                values: new object[] { 100, 100, "Apple", (short)1, (byte)1 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "Name", "QuantityInPackage", "UnitOfMeasurement" },
+                values: new object[] { 101, 101, "Milk", (short)2, (byte)5 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",

@@ -22,6 +22,10 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddCors(options =>
+    options.AddDefaultPolicy(builder => builder.AllowAnyOrigin()
+    ));
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -34,9 +38,10 @@ using (var context = scope.ServiceProvider.GetService<AppDbContext>())
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    app.UseSwagger();
+    app.UseSwagger();   
     app.UseSwaggerUI();
 }
+app.UseCors();
 
 app.UseHttpsRedirection();  
 

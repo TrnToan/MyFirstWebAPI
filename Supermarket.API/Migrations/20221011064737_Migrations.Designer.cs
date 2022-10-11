@@ -11,8 +11,8 @@ using Supermarket.API.Domain.Persistence.Contexts;
 namespace Supermarket.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220922043154_MigrationV1")]
-    partial class MigrationV1
+    [Migration("20221011064737_Migrations")]
+    partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,6 +80,24 @@ namespace Supermarket.API.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 100,
+                            CategoryId = 100,
+                            Name = "Apple",
+                            QuantityInPackage = (short)1,
+                            UnitOfMeasurement = (byte)1
+                        },
+                        new
+                        {
+                            Id = 101,
+                            CategoryId = 101,
+                            Name = "Milk",
+                            QuantityInPackage = (short)2,
+                            UnitOfMeasurement = (byte)5
+                        });
                 });
 
             modelBuilder.Entity("Supermarket.API.Domain.Models.Product", b =>
