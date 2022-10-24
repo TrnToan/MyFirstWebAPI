@@ -14,3 +14,5 @@ namespace Supermarket.API.Extensions
         }
     }
 }
+
+// convert the validation errors into simple strings to return to the client.

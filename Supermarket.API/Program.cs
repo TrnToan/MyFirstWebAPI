@@ -28,11 +28,11 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-using (var context = scope.ServiceProvider.GetService<AppDbContext>())
-{
-    context?.Database.EnsureCreated();
-}
+//using (var scope = app.Services.CreateScope())
+//using (var context = scope.ServiceProvider.GetService<AppDbContext>())
+//{
+//    context?.Database.EnsureCreated();
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

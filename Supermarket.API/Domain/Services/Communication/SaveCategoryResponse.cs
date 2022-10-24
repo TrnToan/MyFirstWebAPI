@@ -28,3 +28,7 @@ namespace Supermarket.API.Domain.Services.Communication
         { }
     }
 }
+
+// This enterprise design pattern encapsulates our request and response parameters into classes as a way to 
+//encapsulate information that our services will use to process some task and to return information to the class 
+//that is using the service.
