@@ -30,6 +30,10 @@ namespace Supermarket.API.Domain.Persistence.Repositories
         public void Update (Category category)  
         {
             _context.Categories.Update(category);   
-        } 
+        }
+        public void Remove(Category category)
+        {
+            _context.Categories.Remove(category);
+        }
     }
 }

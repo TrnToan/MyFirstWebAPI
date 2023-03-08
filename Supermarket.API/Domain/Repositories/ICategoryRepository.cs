@@ -8,6 +8,7 @@ namespace Supermarket.API.Domain.Repositories
         Task AddAsync(Category category);       // persist data into the database
         Task <Category> FindByIdAsync(int id);
         void Update(Category category);
+        void Remove(Category category);
     }
 }
 
